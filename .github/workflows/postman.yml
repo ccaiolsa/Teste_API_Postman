@@ -30,4 +30,6 @@ jobs:
         
       - name: Run API tests
         run: |
-          postman collection run "${{ github.workspace }}/postman/collections/ServeRest - usuarios.postman_collection.json" --integration-id "187391-${{ github.run_id }}"
+          postman collection run "${{ github.workspace }}/postman/collections/ServeRest - usuarios.postman_collection.json" \
+          --env-var "local=http://localhost:3000/" \
+          --integration-id "187391-${{ github.run_id }}"
